@@ -257,6 +257,7 @@ bra done
 LetS:
 lea Letter_S,%a2
 move.l %a2, 44(%a7)
+bra done
 
 LetT:
 lea Letter_T,%a2
