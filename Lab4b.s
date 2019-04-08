@@ -34,6 +34,7 @@ MOVE.L %d0, 8(%sp) /* move the pattern address to the stack */
 
 MOVE.L (%sp)+, %d0 /* restore the stack to the register, and clear the stack */
 
+
 rts 
 /*End of Subroutine **************************************************/ 
 .data
