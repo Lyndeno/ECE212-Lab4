@@ -54,7 +54,7 @@ Error:
     BRA getInput
 
 Exit:
-    MOVE.L %d0 8(%sp)
+    MOVE.L %d0, 8(%sp)
     MOVE.L (%sp)+, %d0
 
 rts 

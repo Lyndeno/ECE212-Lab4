@@ -35,7 +35,8 @@ MOVE.L %d2, (%a2)
 
 /*** Initalize the Coords ***/
 
-CLR.L %d2  /* column value */
+CLR.L %d2  
+/* column value */
 CLR.L %d3       /* Row value    */
 MOVE.B #7, %d4       /* bit number   */
 
@@ -76,13 +77,20 @@ loop_row:
 
         /* delay for a specified period */
         /* push time to stack */
-        MOVE.L #300, -(%SP)
+        MOVE.L #100, -(%SP)
         jsr Delay
         /* clean up stack */
         ADDA.L #4, %SP
 
         /* turn of led */
         jsr TurnOffLed
+
+        /* delay for a specified period */
+        /* push time to stack */
+        MOVE.L #100, -(%SP)
+        jsr Delay
+        /* clean up stack */
+        ADDA.L #4, %SP
 
     not_lit:
         ADD.L #1, %d2 /* increment column value */
